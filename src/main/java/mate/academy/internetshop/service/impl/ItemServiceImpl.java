@@ -1,5 +1,6 @@
 package mate.academy.internetshop.service.impl;
 
+import java.util.Optional;
 import mate.academy.internetshop.dao.ItemDao;
 import mate.academy.internetshop.lib.Service;
 import mate.academy.internetshop.model.Item;
@@ -16,7 +17,7 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public Item get(Long id) {
+    public Optional<Item> get(Long id) {
         return itemDao.get(id);
     }
 

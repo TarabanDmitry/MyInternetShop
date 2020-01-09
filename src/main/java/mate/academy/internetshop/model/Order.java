@@ -1,35 +1,69 @@
 package mate.academy.internetshop.model;
 
+import java.math.BigDecimal;
 import java.util.List;
-import mate.academy.internetshop.lib.IdGenerator;
 
 public class Order {
+    private Long orderId;
+    private List<Item> items;
+    private Long userId;
+    private BigDecimal price;
 
-    private User user;
-    private Long id;
-    private List<Item> itemsList;
+    public Order(List<Item> items, Long userId) {
+        this.items = items;
+        this.userId = userId;
+    }
+
+    public Order() {
+
+    }
 
     public Long getId() {
-        return id;
+        return orderId;
     }
 
-    public void setId(Long id) {
-        this.id = IdGenerator.getOrderId();
+    public void setId(Long orderId) {
+        this.orderId = orderId;
     }
 
-    public List<Item> getItemsList() {
-        return itemsList;
+    public List<Item> getItemList() {
+        return items;
     }
 
-    public void setItemsList(List<Item> itemsList) {
-        this.itemsList = itemsList;
+    public void setItemList(List<Item> itemList) {
+        this.items = itemList;
     }
 
-    public User getUser() {
-        return user;
+    @Override
+    public String toString() {
+        return "Order{"
+                + "orderId=" + orderId
+                + ", itemList=" + items
+                + ", userId=" + userId
+                + ", sumOfMoney=" + price
+                + '}';
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public void setItemsList(List items) {
+        this.items = items;
     }
 
     public void setUser(User user) {
-        this.user = user;
     }
 }

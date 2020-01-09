@@ -1,20 +1,45 @@
 package mate.academy.internetshop.model;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
-
-import mate.academy.internetshop.lib.IdGenerator;
 
 public class Bucket {
 
-    private Long id;
-    List<Item> items;
+    private User user;
+    private Long userId;
+    private List<Item> items;
+    private Long bucketId;
+    private BigDecimal price;
 
-    public Long getId() {
-        return id;
+    public Bucket() {
+        items = new ArrayList<>();
     }
 
-    public void setId(Long id) {
-        this.id = IdGenerator.getBucketId();
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Bucket{"
+                + "user=" + user
+                + ", items=" + items
+                + ", bucketId=" + bucketId
+                + ", price=" + price
+                + '}';
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public List<Item> getItems() {
@@ -23,6 +48,14 @@ public class Bucket {
 
     public void setItems(List<Item> items) {
         this.items = items;
+    }
+
+    public Long getId() {
+        return bucketId;
+    }
+
+    public void setId(Long bucketId) {
+        this.bucketId = bucketId;
     }
 
 }

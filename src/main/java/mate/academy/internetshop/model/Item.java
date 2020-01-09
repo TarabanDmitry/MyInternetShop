@@ -2,19 +2,25 @@ package mate.academy.internetshop.model;
 
 import java.math.BigDecimal;
 
-import mate.academy.internetshop.lib.IdGenerator;
-
 public class Item {
-    private long id;
+    private Long itemId;
     private String name;
     private BigDecimal price;
 
-    public Long getId() {
-        return id;
+    public Item() {
     }
 
-    public void setId(long id) {
-        this.id = IdGenerator.getItemId();
+    public Item(String name, BigDecimal price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public Long getId() {
+        return itemId;
+    }
+
+    public void setId(Long itemId) {
+        this.itemId = itemId;
     }
 
     public String getName() {
@@ -31,5 +37,14 @@ public class Item {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{"
+                + "id=" + itemId
+                + ", name='" + name
+                + '\''
+                + ", price=" + price + '}';
     }
 }
