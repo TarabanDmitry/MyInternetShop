@@ -8,7 +8,6 @@ public class Order {
     private List<Item> items;
     private Long userId;
     private BigDecimal price;
-    private User user;
 
     public Long getOrderId() {
         return orderId;
@@ -24,10 +23,6 @@ public class Order {
 
     public void setItems(List<Item> items) {
         this.items = items;
-    }
-
-    public User getUser() {
-        return user;
     }
 
     public Order(List<Item> items, Long userId) {
@@ -81,7 +76,4 @@ public class Order {
         this.items = items;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
 }

@@ -1,7 +1,6 @@
 package mate.academy.internetshop;
 
 import java.math.BigDecimal;
-import mate.academy.internetshop.dao.ItemDao;
 import mate.academy.internetshop.lib.Inject;
 import mate.academy.internetshop.lib.Injector;
 import mate.academy.internetshop.model.Item;
