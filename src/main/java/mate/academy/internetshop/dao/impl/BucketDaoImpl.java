@@ -13,18 +13,17 @@ import mate.academy.internetshop.model.Bucket;
 public class BucketDaoImpl implements BucketDao {
     @Override
     public Bucket create(Bucket bucket) {
-        bucket.setId(IdGenerator.getBucketId());
+        Bucket newBucket = new Bucket();
+        newBucket.setId(IdGenerator.getBucketId());
         Storage.buckets.add(bucket);
-        return bucket;
+        return newBucket;
     }
 
     @Override
     public Optional<Bucket> get(Long bucketId) {
-        return Optional.ofNullable(Storage.buckets
+        return Storage.buckets
                 .stream().filter(b -> b.getId().equals(bucketId))
-                .findFirst()
-                .orElseThrow(() -> new NoSuchElementException(
-                        "Can't find bucket with id " + bucketId)));
+                .findFirst();
     }
 
     @Override

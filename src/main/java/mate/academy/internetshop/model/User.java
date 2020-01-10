@@ -1,7 +1,5 @@
 package mate.academy.internetshop.model;
 
-import java.util.List;
-
 import mate.academy.internetshop.lib.IdGenerator;
 
 public class User {
@@ -63,7 +61,4 @@ public class User {
         this.password = password;
     }
 
-    public List getUserOrders() {
-        return getUserOrders();
-    }
 }

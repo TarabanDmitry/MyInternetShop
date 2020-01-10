@@ -21,12 +21,10 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public Optional<Order> get(Long orderId) {
-        return Optional.ofNullable(Storage.orders
+        return Storage.orders
                 .stream()
                 .filter(o -> o.getId().equals(orderId))
-                .findFirst()
-                .orElseThrow(() -> new NoSuchElementException("Can't find order with id "
-                        + orderId)));
+                .findFirst();
     }
 
     @Override

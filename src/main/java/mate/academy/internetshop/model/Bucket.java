@@ -6,7 +6,6 @@ import java.util.List;
 
 public class Bucket {
 
-    private User user;
     private Long userId;
     private List<Item> items;
     private Long bucketId;
@@ -27,19 +26,10 @@ public class Bucket {
     @Override
     public String toString() {
         return "Bucket{"
-                + "user=" + user
                 + ", items=" + items
                 + ", bucketId=" + bucketId
                 + ", price=" + price
                 + '}';
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public List<Item> getItems() {

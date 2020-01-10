@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import mate.academy.internetshop.dao.BucketDao;
+import mate.academy.internetshop.dao.ItemDao;
+import mate.academy.internetshop.lib.Inject;
 import mate.academy.internetshop.lib.Service;
 import mate.academy.internetshop.model.Bucket;
 import mate.academy.internetshop.model.Item;
@@ -12,7 +14,10 @@ import mate.academy.internetshop.service.BucketService;
 @Service
 public class BucketServiceImpl implements BucketService {
 
-    private BucketDao bucketDao;
+    @Inject
+    private static BucketDao bucketDao;
+    @Inject
+    private static ItemDao itemDao;
 
     @Override
     public Bucket create(Bucket bucket) {
