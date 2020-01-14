@@ -13,10 +13,9 @@ import mate.academy.internetshop.model.Bucket;
 public class BucketDaoImpl implements BucketDao {
     @Override
     public Bucket create(Bucket bucket) {
-        Bucket newBucket = new Bucket();
-        newBucket.setId(IdGenerator.getBucketId());
+        bucket.setId(IdGenerator.getBucketId());
         Storage.buckets.add(bucket);
-        return newBucket;
+        return bucket;
     }
 
     @Override

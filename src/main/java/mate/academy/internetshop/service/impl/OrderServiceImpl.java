@@ -46,14 +46,18 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List getUserOrders(User user) {
         return Storage.orders
-                .stream().filter(u -> u.getUserId().equals(user.getId()))
+                .stream().filter(u -> u.getId().equals(user.getId()))
                 .collect(Collectors.toList());
     }
 
     @Override
     public Order completeOrder(List items, User user) {
-        Order newOrder = new Order(items, user.getId());
-        orderDao.create(newOrder);
-        return newOrder;
+        Order newOrder = new Order(items, user);
+        return orderDao.create(newOrder);
+    }
+
+    @Override
+    public List<Order> getAll() {
+        return Storage.orders;
     }
 }
