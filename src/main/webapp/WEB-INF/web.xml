@@ -113,4 +113,5 @@
     <listener>
         <listener-class>mate.academy.internetshop.controllers.InjectInitializer</listener-class>
     </listener>
+
 </web-app>
