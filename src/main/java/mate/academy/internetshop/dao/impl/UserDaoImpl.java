@@ -1,5 +1,6 @@
 package mate.academy.internetshop.dao.impl;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -54,6 +55,11 @@ public class UserDaoImpl implements UserDao {
     @Override
     public boolean delete(User user) {
         return Storage.users.remove(user);
+    }
+
+    @Override
+    public List<User> getAll() {
+        return Storage.users;
     }
 }
 

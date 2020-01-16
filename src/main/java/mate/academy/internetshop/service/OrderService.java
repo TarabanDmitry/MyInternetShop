@@ -18,8 +18,9 @@ public interface OrderService {
 
     void delete(Order order);
 
-    List getUserOrders(User user);
+    List<Order> getUserOrders(User user);
 
     Order completeOrder(List items, User user);
 
+    List<Order> getAll();
 }

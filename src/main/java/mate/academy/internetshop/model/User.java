@@ -1,7 +1,5 @@
 package mate.academy.internetshop.model;
 
-import mate.academy.internetshop.lib.IdGenerator;
-
 public class User {
 
     private Long id;
@@ -10,12 +8,15 @@ public class User {
     private String login;
     private String password;
 
+    public User() {
+    }
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
-        this.id = IdGenerator.getUserId();
+        this.id = id;
     }
 
     @Override
