@@ -13,10 +13,9 @@ import mate.academy.internetshop.model.Bucket;
 public class BucketDaoImpl implements BucketDao {
     @Override
     public Bucket create(Bucket bucket) {
-        Bucket newBucket = new Bucket();
-        newBucket.setId(IdGenerator.getBucketId());
+        bucket.setId(IdGenerator.getBucketId());
         Storage.buckets.add(bucket);
-        return newBucket;
+        return bucket;
     }
 
     @Override
@@ -24,6 +23,13 @@ public class BucketDaoImpl implements BucketDao {
         return Storage.buckets
                 .stream().filter(b -> b.getId().equals(bucketId))
                 .findFirst();
+    }
+
+    @Override
+    public Bucket getByUserId(Long userId) {
+        return Storage.buckets.stream()
+                .filter(b -> b.getUserId().equals(userId))
+                .findFirst().orElse(create(new Bucket()));
     }
 
     @Override

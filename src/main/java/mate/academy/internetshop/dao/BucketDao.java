@@ -4,4 +4,5 @@ import mate.academy.internetshop.model.Bucket;
 
 public interface BucketDao extends GenericDao<Bucket, Long> {
 
+    public Bucket getByUserId(Long userId);
 }

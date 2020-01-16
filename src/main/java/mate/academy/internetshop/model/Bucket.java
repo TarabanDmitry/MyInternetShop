@@ -48,4 +48,11 @@ public class Bucket {
         this.bucketId = bucketId;
     }
 
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
 }

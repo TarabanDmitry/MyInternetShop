@@ -1,12 +1,13 @@
 package mate.academy.internetshop.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
     private Long orderId;
     private List<Item> items;
-    private Long userId;
+    private User user;
     private BigDecimal price;
 
     public Long getOrderId() {
@@ -25,9 +26,13 @@ public class Order {
         this.items = items;
     }
 
-    public Order(List<Item> items, Long userId) {
-        this.items = items;
-        this.userId = userId;
+    public Order(){
+
+    }
+
+    public Order(List<Item> items, User user) {
+        this.items = new ArrayList<>(items);
+        this.user = user;
     }
 
     public Long getId() {
@@ -50,18 +55,10 @@ public class Order {
     public String toString() {
         return "Order{"
                 + "orderId=" + orderId
-                + ", itemList=" + items
-                + ", userId=" + userId
-                + ", sumOfMoney=" + price
+                + ", items=" + items
+                + ", user=" + user
+                + ", price=" + price
                 + '}';
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
     }
 
     public BigDecimal getPrice() {
