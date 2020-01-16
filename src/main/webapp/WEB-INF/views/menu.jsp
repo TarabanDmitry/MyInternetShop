@@ -6,7 +6,7 @@
 <body>
 <h1>Main Menu</h1>
 <p>
-    <button onclick="location.href='/MyInternetShop_war_exploded/servlet/registration'" type="button">Register</button>
+    <button onclick="location.href='/MyInternetShop_war_exploded/register'" type="button">Register</button>
 <p>
     <button onclick="location.href='/MyInternetShop_war_exploded/servlet/addItem'" type="button">Add Item</button>
 <p>

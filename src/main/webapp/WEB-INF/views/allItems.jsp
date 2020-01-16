@@ -40,7 +40,3 @@ All Items :
 </p>
 </body>
 </html>
-
-
-
-
