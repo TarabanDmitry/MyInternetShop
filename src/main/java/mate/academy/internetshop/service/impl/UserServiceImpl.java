@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import mate.academy.internetshop.dao.Storage;
 import mate.academy.internetshop.dao.UserDao;
 import mate.academy.internetshop.exceptions.AuthenticationException;
 import mate.academy.internetshop.lib.Inject;
@@ -53,13 +54,24 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User login(String login, String password)
-            throws AuthenticationException {
-        return userDao.login(login, password);
+    public User login(String login, String password) throws AuthenticationException {
+        Optional<User> user = userDao.findByLogin(login);
+        if (user.isEmpty()
+                || !(user.get().getPassword().equals(password))) {
+            throw new AuthenticationException("Incorrect login or password");
+        }
+        return user.orElseThrow();
     }
 
     @Override
     public Optional<User> getByToken(String token) {
         return userDao.getByToken(token);
+    }
+
+    @Override
+    public Optional<User> findByLogin(String login) {
+        return Storage.users.stream()
+                .filter(u -> u.getLogin().equals(login))
+                .findFirst();
     }
 }
