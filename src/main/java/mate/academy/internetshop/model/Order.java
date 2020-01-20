@@ -26,7 +26,7 @@ public class Order {
         this.items = items;
     }
 
-    public Order(){
+    public Order() {
 
     }
 

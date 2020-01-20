@@ -6,5 +6,5 @@ import mate.academy.internetshop.model.Item;
 
 public interface ItemDao extends GenericDao<Item, Long> {
 
-    public List<Item> getAllItems();
+    List<Item> getAllItems();
 }
