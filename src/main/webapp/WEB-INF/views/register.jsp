@@ -5,7 +5,7 @@
     <title>Registration</title>
 </head>
 <body>
-<form action="/MyInternetShop_war_exploded/servlet/registration" method="post">
+<form action="/MyInternetShop_war_exploded/registration" method="post">
     <div class="container">
         <h1>Register</h1>
         <p>Please fill in this form to create an account.</p>
@@ -32,7 +32,9 @@
     </div>
 
     <div class="container signin">
-        <p>Already have an account? <a href="#">Sign in</a>.</p>
+        <p>Already have an account? <button onclick="location.href='/MyInternetShop_war_exploded/login'" type="button">Sign
+            In
+        </button>.</p>
     </div>
 </form>
 </body>

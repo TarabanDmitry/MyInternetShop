@@ -4,6 +4,6 @@
     <title>IndexFirstPage</title>
 </head>
 <body>
-Hello World
+Hello! This is index page!
 </body>
 </html>

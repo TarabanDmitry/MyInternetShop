@@ -43,7 +43,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> getUserOrders(User user) {
-        return getUserOrders(user);
+        return orderDao.getUserOrders(user);
     }
 
     @Override

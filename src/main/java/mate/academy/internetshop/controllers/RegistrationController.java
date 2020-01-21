@@ -1,6 +1,7 @@
 package mate.academy.internetshop.controllers;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,8 +20,6 @@ public class RegistrationController extends HttpServlet {
     @Inject
     private static BucketService bucketService;
 
-    private static final Long USER_ID = 1L;
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -31,17 +30,16 @@ public class RegistrationController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         User newUser = new User();
-        Bucket bucket = new Bucket();
-        bucket.setUserId(USER_ID);
-        bucketService.create(bucket);
-
-        newUser.setId(USER_ID);
         newUser.setLogin(req.getParameter("login"));
         newUser.setPassword(req.getParameter("psw"));
         newUser.setName(req.getParameter("user_name"));
         newUser.setSurname(req.getParameter("user_surname"));
-        userService.create(newUser);
+        User user = userService.create(newUser);
+        Bucket bucket = new Bucket();
 
-        resp.sendRedirect(req.getContextPath() + "/servlet/getAllUsers");
+        bucket.setUserId(user.getId());
+        bucketService.create(bucket);
+
+        resp.sendRedirect(req.getContextPath() + "/login");
     }
 }
