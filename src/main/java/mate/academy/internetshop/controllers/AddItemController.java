@@ -1,7 +1,6 @@
 package mate.academy.internetshop.controllers;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +27,7 @@ public class AddItemController extends HttpServlet {
             throws ServletException, IOException {
         Item newItem = new Item();
         newItem.setName(req.getParameter("item_name"));
-        newItem.setPrice(BigDecimal.valueOf(Double.parseDouble(req.getParameter("price"))));
+        newItem.setPrice(Double.parseDouble(req.getParameter("price")));
         itemService.create(newItem);
 
         resp.sendRedirect(req.getContextPath() + "/servlet/addItem");

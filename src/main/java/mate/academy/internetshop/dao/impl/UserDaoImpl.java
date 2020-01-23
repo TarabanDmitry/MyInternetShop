@@ -21,11 +21,11 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public Optional<User> get(Long userId) {
+    public User get(Long userId) {
         return Storage.users
                 .stream()
                 .filter(u -> u.getId().equals(userId))
-                .findFirst();
+                .findFirst().get();
     }
 
     @Override

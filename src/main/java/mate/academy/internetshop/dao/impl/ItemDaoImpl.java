@@ -2,15 +2,12 @@ package mate.academy.internetshop.dao.impl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
 
 import mate.academy.internetshop.dao.ItemDao;
 import mate.academy.internetshop.dao.Storage;
-import mate.academy.internetshop.lib.Dao;
 import mate.academy.internetshop.lib.IdGenerator;
 import mate.academy.internetshop.model.Item;
 
-@Dao
 public class ItemDaoImpl implements ItemDao {
     @Override
     public Item create(Item item) {
@@ -20,11 +17,10 @@ public class ItemDaoImpl implements ItemDao {
     }
 
     @Override
-    public Optional<Item> get(Long id) {
+    public Item get(Long id) {
         return Storage.items
                 .stream()
-                .filter(i -> i.getId().equals(id))
-                .findFirst();
+                .filter(i -> i.getId().equals(id)).findFirst().get();
     }
 
     @Override
