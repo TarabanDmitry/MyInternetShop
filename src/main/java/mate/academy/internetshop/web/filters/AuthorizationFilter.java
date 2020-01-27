@@ -1,5 +1,8 @@
 package mate.academy.internetshop.web.filters;
 
+import static mate.academy.internetshop.model.Role.RoleName.ADMIN;
+import static mate.academy.internetshop.model.Role.RoleName.USER;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,9 +17,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import static mate.academy.internetshop.model.Role.RoleName.ADMIN;
-import static mate.academy.internetshop.model.Role.RoleName.USER;
 
 import mate.academy.internetshop.lib.Inject;
 import mate.academy.internetshop.model.Role;

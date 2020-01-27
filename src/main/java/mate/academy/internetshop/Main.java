@@ -1,7 +1,5 @@
 package mate.academy.internetshop;
 
-import java.math.BigDecimal;
-
 import mate.academy.internetshop.lib.Inject;
 import mate.academy.internetshop.lib.Injector;
 import mate.academy.internetshop.model.Item;
@@ -32,9 +30,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Item phone = new Item("Iphone", new BigDecimal(5000));
-        Item phone2 = new Item("Xiaomi", new BigDecimal(3000));
-        Item phone3 = new Item("Samsung", new BigDecimal(4000));
+        Item phone = new Item("Iphone", 5000.);
+        Item phone2 = new Item("Xiaomi", 3000.);
+        Item phone3 = new Item("Samsung", 4000.);
         itemService.create(phone);
         itemService.create(phone2);
         itemService.create(phone3);

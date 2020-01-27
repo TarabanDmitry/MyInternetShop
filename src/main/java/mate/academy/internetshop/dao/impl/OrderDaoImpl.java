@@ -2,7 +2,6 @@ package mate.academy.internetshop.dao.impl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import mate.academy.internetshop.dao.OrderDao;
@@ -23,11 +22,11 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public Optional<Order> get(Long orderId) {
+    public Order get(Long orderId) {
         return Storage.orders
                 .stream()
                 .filter(o -> o.getId().equals(orderId))
-                .findFirst();
+                .findFirst().get();
     }
 
     @Override

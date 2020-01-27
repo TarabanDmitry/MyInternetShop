@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:useBean id="items" scope="request" type="java.util.List"/>
+<jsp:useBean id="items" scope="request" type="java.util.List<mate.academy.internetshop.model.Item>"/>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,13 +13,12 @@ All Items :
         <th>ID</th>
         <th>Item Name</th>
         <th>Price</th>
-        <th>Add to Bucket</th>
-        <th>Delete</th>
+        <th>Delete Item</th>
     </tr>
     <c:forEach var="item" items="${items}">
         <tr>
             <td>
-                <c:out value="${item.id}"/>
+                <c:out value="${item.itemId}"/>
             </td>
             <td>
                 <c:out value="${item.name}"/>
@@ -37,10 +36,7 @@ All Items :
         </tr>
     </c:forEach>
 </table>
-<p>
-    <button onclick="location.href='/MyInternetShop_war_exploded/servlet/main_menu'"
-            type="button">Back to menu
-    </button>
-</p>
+<p><a href="servlet/bucket">Bucket</a></p>
+<p><a href="index">Main page</a></p>
 </body>
 </html>

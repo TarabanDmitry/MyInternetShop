@@ -1,7 +1,6 @@
 package mate.academy.internetshop.dao.impl;
 
 import java.util.NoSuchElementException;
-import java.util.Optional;
 
 import mate.academy.internetshop.dao.BucketDao;
 import mate.academy.internetshop.dao.Storage;
@@ -19,10 +18,10 @@ public class BucketDaoImpl implements BucketDao {
     }
 
     @Override
-    public Optional<Bucket> get(Long bucketId) {
+    public Bucket get(Long bucketId) {
         return Storage.buckets
                 .stream().filter(b -> b.getId().equals(bucketId))
-                .findFirst();
+                .findFirst().get();
     }
 
     @Override
